@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/selectFragment">
+
+    <fragment
+            android:id="@+id/selectFragment"
+            android:name="com.jtarini.zupcryptowatcher.scene.select.SelectFragment"
+            android:label="SelectFragment"
+            tools:layout="@layout/fragment_select" >
+        <action
+                android:id="@+id/action_selectFragment_to_coinFragment"
+                app:destination="@id/coinFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/coinFragment"
+            android:name="com.jtarini.zupcryptowatcher.scene.coin.CoinFragment"
+            android:label="CoinFragment" >
+        <argument
+                android:name="coinSymbol"
+                android:defaultValue="BTC"
+                app:argType="string" />
+    </fragment>
+
+</navigation>
